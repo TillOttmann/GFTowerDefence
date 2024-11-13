@@ -7,7 +7,9 @@ import greenfoot.*;
  * @version (a version number or a date)
  */
 public class Map extends World {
- 
+     
+    public static int money=100;
+    
     private static final int[] START_POS = {0, 1};
     private static final String[][] MAP = {
         {"bg", "bg", "bg", "bg", "bg", "bg", "bg", "bg", "bg", "bg", "bg", "bg", "bg", "bg", "bg", "bg", "bg", "bg", "bg", "bg"},
@@ -37,7 +39,7 @@ public class Map extends World {
         super(1680, 840, 1);
         insertPath();
         insertMenu();
-        
+        showText("Money: "+money,90,650);
     }
     
     private void insertPath() { //Der Path wird durch den array hinzugefügt
@@ -60,7 +62,7 @@ public class Map extends World {
     
     
     public void addingTower() { 
-        if(Greenfoot.mouseClicked(null)) {
+        if(Greenfoot.mouseClicked(null)&& Greenfoot.getMouseInfo().getActor() == null) {
             addObject(new Tower(), (Greenfoot.getMouseInfo().getX()/60)*60+30, (Greenfoot.getMouseInfo().getY()/60)*60+30);
         }
         
