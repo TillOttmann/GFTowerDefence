@@ -18,4 +18,17 @@ public class Enemy extends Actor
     {
         // Add your action code here.
     }
+    
+    public void hitByProjectile(){
+        Actor Projectile = getOneIntersectingObject(Projectile.class);
+        if(Projectile!=null) {
+            health-=Tower.damage;
+            getWorld().removeObject(Projectile);
+        }
+        if(health==0) {
+            getWorld().removeObject(this);
+        }
+    
+    }
+    
 }
