@@ -23,7 +23,7 @@ public class Tower extends Actor
     
     
     public void enemyDetector() {
-        List<Enemy> enemies = getObjectsInRange(1000,Enemy.class);
+        List<Enemy> enemies = getObjectsInRange(6000,Enemy.class);
         for(Enemy enemy : enemies) {
             Projectile projectile = new Projectile();
             getWorld().addObject(projectile,getX(),getY());

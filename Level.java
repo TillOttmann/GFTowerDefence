@@ -12,6 +12,8 @@ public class Level {
     }
     
     public void start() {
-        map.addObject(new Enemy(), 0, 1);    
+        map.addObject(new Enemy(), 30+0*60, 30+1*60);
+        map.addObject(new Tower(), 30+4*60,30+1*60);
+        
     }
 }
