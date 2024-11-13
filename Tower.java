@@ -15,15 +15,15 @@ public class Tower extends Actor
      */
     public void act()
     {
-        // Add your action code here.
+        enemyDetector();
     }
     
     private List<Enemy> enemies;
-    public static int damage = 1;
+    public static int damage = 10;
     
     
     public void enemyDetector() {
-        List<Enemy> enemies = getObjectsInRange(10,Enemy.class);
+        List<Enemy> enemies = getObjectsInRange(1000,Enemy.class);
         for(Enemy enemy : enemies) {
             Projectile projectile = new Projectile();
             getWorld().addObject(projectile,getX(),getY());

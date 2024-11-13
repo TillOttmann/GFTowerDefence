@@ -25,27 +25,27 @@ public class Map extends World {
     
     /**
      * Konstruktor von Map, erstellt die Welt und fügt den Pfad ein
-     * Die Welt ist 20x14 groß und jede Box ist 60x60px groß
+     * Die Welt ist 1680x840 groß und jede Box ist 1x1px groß
      */
     public Map() {    
-        super(20, 14, 60);
+        super(1680, 840, 1);
         insertPath();
         insertMenu();
     }
     
     private void insertPath() {
-        for (int row = 0; row < MAP.length; row++) {
-            for (int column = 0; column < MAP[0].length; column++) {
+        for (int row = 0; row < 12; row++) {
+            for (int column = 0; column < 20; column++) {
                 if (MAP[row][column].equalsIgnoreCase("pt")) {
-                    addObject(new Path(), column, row);
+                    addObject(new Path(), 30+column*60, 30+row*60);
                 }
             }
         }
     }
     
     private void insertMenu() {
-        addObject(new Menu(), 10, 12);
-        addObject(new StartButton(this), 1, 12);
-        addObject(new StopButton(this), 3, 12);
+        addObject(new Menu(), 600, 720);
+        addObject(new StartButton(this), 60, 720);
+        addObject(new StopButton(this), 180, 720);
     }
 }
